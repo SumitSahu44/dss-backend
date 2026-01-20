@@ -4,7 +4,7 @@ import AddBlog from "./pages/AddBlog";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/surendraadmin">
       <Routes>
         <Route path="/" element={<AddBlog />} />
       </Routes>

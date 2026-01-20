@@ -25,7 +25,7 @@ const AddBlog = () => {
         formData.append("file", file);
 
         try {
-          const res = await axios.post("http://localhost:5000/api/blogs/upload", formData);
+          const res = await axios.post("https://dssbackend.onrender.com/api/blogs/upload", formData);
           const range = quillRef.current.getEditor().getSelection();
           quillRef.current.getEditor().insertEmbed(range.index, "image", res.data.url);
         } catch (err) {
@@ -62,7 +62,7 @@ const AddBlog = () => {
     formData.append("thumbnail", thumbnail);
 
     try {
-      await axios.post("http://localhost:5000/api/blogs", formData);
+      await axios.post("https://dssbackend.onrender.com/api/blogs", formData);
       alert("Blog added successfully!");
       // Reset form or redirect
     } catch (err) {
